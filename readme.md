@@ -35,5 +35,9 @@ All commands in this repository:
 - Are safe to run on a fresh Ubuntu installation
 
 ## 👉 Now, Let's start our journey
-- Click on the link to move to the update command
-- **[01.system_update](/cmds/01.system_update/readme.1md)**
+- Click on the link to move to the Dual boot Video Link
+- **[00.install_guide](cmds/00.install_guide/readme0.md)**
+
+## 👉 Or, if you have already dual booted
+- Click on the link below to move to System Update cmds
+- **[01.system_update](cmds/00.system_update/readme1.md)**
