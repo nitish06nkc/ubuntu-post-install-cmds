@@ -33,3 +33,7 @@ All commands in this repository:
 - Are officially supported by Ubuntu
 - Do not use third-party scripts or PPAs
 - Are safe to run on a fresh Ubuntu installation
+
+## 👉 Now, Let's start our journey
+- Click on the link to move to the update command
+- **[01.system_update](/01.system_update/readme.1md)**
