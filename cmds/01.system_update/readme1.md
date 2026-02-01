@@ -106,5 +106,5 @@ sudo apt update && sudo apt -y upgrade
 
 ### 👉 After finishing Update Command
 - Move to the following file to remove unused packages and clean cache files
-  **[02.system_cleanup](../02.system_cleanup/readme2.md)** folder
+-  **[02.system_cleanup](../02.system_cleanup/readme2.md)** folder
 ---
