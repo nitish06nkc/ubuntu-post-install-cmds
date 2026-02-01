@@ -11,6 +11,7 @@ After installing Linux, these **3 commands** are the standard, safe workflow to 
 ## 📝 Notes (read once)
 - Run these commands **in the exact order shown**.
 - If you use **PPAs / third‑party repos**, reviewing the upgrade list is **worth it**.
+- After every Sudo cmd , a password is asked. Enter the password you set during the installation.
 - `-y` = auto “yes” → convenient, but you may miss important prompts.
 - After big upgrades, a **reboot** may be needed (kernel/libc updates).
 
