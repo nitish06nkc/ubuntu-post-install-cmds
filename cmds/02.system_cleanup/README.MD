@@ -66,3 +66,9 @@ sudo apt clean
 ```
 
 **Tip:** Run this after big updates, or periodically to keep your system **clean, efficient, and lightweight**.
+
+---
+
+## 👉 After completing update cmds
+- Move to **Preload cmd**
+- **[03.preload](../03.preload/README.MD)**

@@ -19,8 +19,8 @@ However, with newer Windows updates (**Windows 11 25H2 and later**), Ubuntu can 
 Once you have successfully installed Ubuntu:
 - Finish all installation steps shown in the video
 - Boot into Ubuntu
-- Then continue with this repository starting from the  
-  **[01.system_update](../01.system_update/readme1.md)** folder
+- Then continue with the below link to start with **Update** cmds.
+  **[01.system_update](../01.system_update/README.MD)** folder
 
 ---
 
