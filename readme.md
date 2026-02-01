@@ -36,4 +36,4 @@ All commands in this repository:
 
 ## 👉 Now, Let's start our journey
 - Click on the link to move to the update command
-- **[01.system_update](/01.system_update/readme.1md)**
+- **[01.system_update](/cmds/01.system_update/readme.1md)**
