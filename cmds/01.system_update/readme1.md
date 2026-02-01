@@ -1,4 +1,4 @@
-# 🛠️ System Update Basics (Ubuntu)
+# 🛠️ System Update Basics
 
 After installing Linux, these **3 commands** are the standard, safe workflow to keep your system updated:
 
