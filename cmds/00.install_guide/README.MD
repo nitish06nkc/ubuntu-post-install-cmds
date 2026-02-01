@@ -20,7 +20,7 @@ Once you have successfully installed Ubuntu:
 - Finish all installation steps shown in the video
 - Boot into Ubuntu
 - Then continue with the below link to start with **Update** cmds.
-  **[01.system_update](../01.system_update/README.MD)** folder
+- **[01.system_update](../01.system_update/README.MD)** folder
 
 ---
 
