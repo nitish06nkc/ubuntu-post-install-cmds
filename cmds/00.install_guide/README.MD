@@ -22,6 +22,7 @@ Once you have successfully installed Ubuntu:
 - Then continue with the below link to start with **Update** cmds.
 - **[01.system_update](../01.system_update/README.MD)** folder
 
+
 ---
 
 Good luck, and welcome to Ubuntu 🐧

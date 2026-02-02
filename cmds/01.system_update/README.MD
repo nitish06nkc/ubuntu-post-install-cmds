@@ -104,8 +104,8 @@ sudo apt update && sudo apt -y upgrade
 - You stay on older versions
 - Security vulnerabilities may remain
 - Fixes and stability/performance improvements are missed
-
-### 👉 After finishing Update Command
-- Move to the following file to remove unused packages and clean cache files
--  **[02.system_cleanup](../02.system_cleanup/README.MD)** folder
 ---
+## 👉 Next: System Cleanup
+
+- Move to **System Cleanup Cmds**
+- **[02.systemcleanup](../02.system_cleanup/README.MD)**

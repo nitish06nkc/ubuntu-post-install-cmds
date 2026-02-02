@@ -34,6 +34,7 @@ All commands in this repository:
 - Do not use third-party scripts or PPAs
 - Are safe to run on a fresh Ubuntu installation
 
+
 ## 👉 Now, Let's start our journey
 - Click on the link to move to the Dual boot Video Link
 - **[00.install_guide](cmds/00.install_guide/README.MD)**

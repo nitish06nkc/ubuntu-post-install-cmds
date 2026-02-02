@@ -69,6 +69,7 @@ sudo apt clean
 
 ---
 
-## 👉 After completing update cmds
-- Move to **Preload cmd**
+## 👉 Next: Preload Cmds
+
+- Move to **Preload Cmds**
 - **[03.preload](../03.preload/README.MD)**
