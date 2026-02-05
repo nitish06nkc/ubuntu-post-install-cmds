@@ -107,14 +107,12 @@ rm -rf ~/.mozilla
 ```bash
 sudo apt install curl
 
-sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg \
-  https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
+sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
 
-echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg] \
-  https://brave-browser-apt-release.s3.brave.com/ stable main" | \
-  sudo tee /etc/apt/sources.list.d/brave-browser-release.list
+sudo curl -fsSLo /etc/apt/sources.list.d/brave-browser-release.sources https://brave-browser-apt-release.s3.brave.com/brave-browser.sources
 
 sudo apt update
+
 sudo apt install brave-browser
 ```
 
@@ -128,14 +126,11 @@ sudo apt install brave-browser
 sudo apt purge brave-browser
 sudo apt autoremove
 
-# Remove repository
-sudo rm /etc/apt/sources.list.d/brave-browser-release.list
-
-# Remove GPG key
+sudo rm /etc/apt/sources.list.d/brave-browser-release.sources
 sudo rm /usr/share/keyrings/brave-browser-archive-keyring.gpg
 
-# Refresh APT
 sudo apt update
+
 ```
 
 **Optional user config cleanup**
@@ -225,33 +220,21 @@ sudo apt clean
 ```bash
 sudo apt install wget gpg
 
-wget -qO- https://packages.microsoft.com/keys/microsoft.asc | \
-  gpg --dearmor > microsoft.gpg
+wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/microsoft.gpg > /dev/null
 
-sudo install -o root -g root -m 644 microsoft.gpg \
-  /etc/apt/trusted.gpg.d/
+echo "deb [arch=amd64] https://packages.microsoft.com/repos/code stable main" | sudo tee /etc/apt/sources.list.d/vscode.list
 
-sudo sh -c 'echo "deb [arch=amd64] \
-  https://packages.microsoft.com/repos/code stable main" \
-  > /etc/apt/sources.list.d/vscode.list'
-
-sudo apt update
-sudo apt install code
+sudo apt update && sudo apt install code
 ```
 
 ### ❌ Remove VS Code completely (including repo + key)
 ```bash
 sudo apt purge code
 sudo apt autoremove
-
-# Remove repository
 sudo rm /etc/apt/sources.list.d/vscode.list
-
-# Remove GPG key
 sudo rm /etc/apt/trusted.gpg.d/microsoft.gpg
-
-# Refresh APT
 sudo apt update
+
 ```
 
 **Optional user config cleanup**
