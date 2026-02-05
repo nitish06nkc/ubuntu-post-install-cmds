@@ -1,166 +1,300 @@
 # 🧰 Basic Required Daily Apps Install (Ubuntu)
 
-Essential applications for everyday Ubuntu desktop use — **media**, **office**, **GNOME extensions**, and **usability essentials**.
+Essential apps for everyday Ubuntu desktop use — **media**, **office**, **browsers**, **GNOME extensions**, and a **solid code editor**.
 
 ---
 
 ## 📌 Overview
 
-After installing Ubuntu, some apps are almost universally needed for daily usage:
+After installing Ubuntu, these are the most common daily essentials:
 
-- 🎵 Music playback
-- 🎬 Video/media playback
-- 🧩 GNOME extensions (especially important on laptops)
-- 📝 Documents & office work
-- 🧑‍💻 A solid code editor (VS Code via official repo)
+- 🎵 **Music playback**
+- 🎬 **Video/media playback**
+- 🌐 **Web browsers** (Firefox / Brave)
+- 🧩 **GNOME extensions** (extra useful on laptops)
+- 📝 **Documents & office work**
+- 🧑‍💻 **Code editor** (VS Code via Microsoft’s official repo)
+
+This README includes **install** steps and **clean removal** steps for each item.
+
+---
+
+## 🧭 Table of Contents
+
+- 🎵 Rhythmbox (Music)
+- 🎬 VLC (Media)
+- 🌐 Browsers: Firefox (APT) / Brave (Official repo)
+- 🧩 GNOME Extension Manager
+- 🧠 Must-have GNOME extensions
+- 📝 LibreOffice
+- 🧑‍💻 VS Code (Microsoft repo)
+- ✅ Recommended install order
+- 🧹 Full cleanup checklist
+- 📌 Summary
 
 ---
 
 ## 🎵 Music Player — Rhythmbox
 
-**Install:**
+### ✅ Install
 ```bash
 sudo apt install rhythmbox
 ```
 
-**Used for:**
+**Used for**
 - Playing local music
 - Managing music libraries
 - Basic podcast support
+
+### ❌ Remove completely
+```bash
+sudo apt purge rhythmbox
+sudo apt autoremove
+sudo apt clean
+```
 
 ---
 
 ## 🎬 Media Player — VLC
 
-**Install:**
+### ✅ Install
 ```bash
 sudo apt install vlc
 ```
 
-**Why VLC:**
+**Why VLC**
 - Plays almost any audio/video format
-- Independent of system codecs
-- Reliable and lightweight
+- Works independently of many system codec issues
+- Reliable + lightweight
+
+### ❌ Remove completely
+```bash
+sudo apt purge vlc
+sudo apt autoremove
+sudo apt clean
+```
+
+---
+
+## 🌐 Web Browsers
+
+### 🦊 Firefox (APT version)
+
+> Ubuntu may ship Firefox as a **Snap** by default. This installs the **APT** version.
+
+#### ✅ Install
+```bash
+sudo apt install firefox
+```
+
+#### ❌ Remove completely
+```bash
+sudo apt purge firefox
+sudo apt autoremove
+sudo apt clean
+```
+
+**Optional user config cleanup**
+```bash
+rm -rf ~/.mozilla
+```
+
+---
+
+### 🦁 Brave Browser (Official Repository) — Recommended
+
+#### ✅ Install Brave
+```bash
+sudo apt install curl
+
+sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg \
+  https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
+
+echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg] \
+  https://brave-browser-apt-release.s3.brave.com/ stable main" | \
+  sudo tee /etc/apt/sources.list.d/brave-browser-release.list
+
+sudo apt update
+sudo apt install brave-browser
+```
+
+**Why Brave**
+- Privacy-focused
+- Built-in ad & tracker blocking
+- Chromium-based (Chrome extension support)
+
+#### ❌ Remove Brave completely (including repo + key)
+```bash
+sudo apt purge brave-browser
+sudo apt autoremove
+
+# Remove repository
+sudo rm /etc/apt/sources.list.d/brave-browser-release.list
+
+# Remove GPG key
+sudo rm /usr/share/keyrings/brave-browser-archive-keyring.gpg
+
+# Refresh APT
+sudo apt update
+```
+
+**Optional user config cleanup**
+```bash
+rm -rf ~/.config/BraveSoftware
+rm -rf ~/.cache/BraveSoftware
+```
 
 ---
 
 ## 🧩 GNOME Extensions Manager
 
-**Install:**
+Provides a GUI to install and manage GNOME Shell extensions safely.
+
+### ✅ Install
 ```bash
 sudo apt install gnome-shell-extension-manager
 ```
 
-This provides a **GUI** to safely install and manage GNOME Shell extensions.
+### ❌ Remove completely
+```bash
+sudo apt purge gnome-shell-extension-manager
+sudo apt autoremove
+```
 
 ---
 
-## 🧠 MUST-HAVE GNOME EXTENSIONS (Highly Recommended)
+## 🧠 Must-have GNOME Extensions (Highly Recommended)
 
-After installing **Extension Manager**, open it and install the following:
+> Install these via **Extension Manager** (GUI).
 
 ### ✅ Touchpad Gestures (Laptop Users)
+**Extension:** **X11 Gestures (Touchégg Integration)**
 
-**Extension to install:**
-- **X11 Gestures (Touchégg Integration)**
+**Why it matters**
+- Bridges Touchégg with GNOME
+- Essential for **X11** sessions
 
-**📌 Why this matters**
-- You already installed **Touchégg**
-- This extension connects **Touchégg** with **GNOME**
-
-**Enables:**
+**Enables**
 - **3-finger swipe** → switch workspaces
 - **4-finger swipe** → window management
 
-⚠️ Especially important for **X11 sessions** (common on many laptops).
-
 ---
 
-### ✅ Clipboard History (**2M+ Downloads — MUST INSTALL**)
+### ✅ Clipboard History (2M+ downloads — MUST INSTALL)
+**Extension:** **Clipboard Indicator** (by **Tudmotu**)
 
-**Extension to install:**
-- **Clipboard Indicator** *(by Tudmotu — from extensions.gnome.org)*
+**Why it’s essential**
+- GNOME has no clipboard history by default
+- Widely used + trusted
 
-**📌 Why this extension is essential**
-- GNOME has **no clipboard history** by default
-- This is the most popular clipboard extension
-- Used by **2M+ users worldwide**
-
-**What it adds:**
-- Clipboard history menu
-- Multiple copied items
-- Searchable clipboard entries
+**Adds**
+- Clipboard history
+- Searchable entries
 - Keyboard shortcuts
-- Reliable, lightweight, battle-tested
-
-➡️ **Recommendation:** Stick with **Clipboard Indicator (Tudmotu)** unless you have a specific reason to use another one.
+- Lightweight & stable
 
 ---
 
 ## 📝 Office Suite — LibreOffice
 
-**Install:**
+### ✅ Install
 ```bash
 sudo apt install libreoffice
 ```
 
-**Provides:**
-- **Writer** (Word replacement)
-- **Calc** (Excel replacement)
-- **Impress** (PowerPoint replacement)
+**Provides**
+- Writer
+- Calc
+- Impress  
+…and strong compatibility with Microsoft Office formats.
 
-Fully compatible with Microsoft Office formats.
+### ❌ Remove completely
+```bash
+sudo apt purge libreoffice*
+sudo apt autoremove
+sudo apt clean
+```
 
 ---
 
 ## 🧑‍💻 Visual Studio Code (Official Microsoft Repository)
 
-⚠️ VS Code should be installed via **Microsoft’s official repository**, not Ubuntu’s default repo.
+⚠️ **Install only via Microsoft’s official repo.**
 
-### ✅ Install via Microsoft Repo (Recommended)
-
+### ✅ Install
 ```bash
 sudo apt install wget gpg
-wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
-sudo install -o root -g root -m 644 microsoft.gpg /etc/apt/trusted.gpg.d/
-sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/code stable main" > /etc/apt/sources.list.d/vscode.list'
+
+wget -qO- https://packages.microsoft.com/keys/microsoft.asc | \
+  gpg --dearmor > microsoft.gpg
+
+sudo install -o root -g root -m 644 microsoft.gpg \
+  /etc/apt/trusted.gpg.d/
+
+sudo sh -c 'echo "deb [arch=amd64] \
+  https://packages.microsoft.com/repos/code stable main" \
+  > /etc/apt/sources.list.d/vscode.list'
+
 sudo apt update
 sudo apt install code
 ```
 
-**Why this method:**
-- Faster updates
-- Official builds
-- Better extension compatibility
+### ❌ Remove VS Code completely (including repo + key)
+```bash
+sudo apt purge code
+sudo apt autoremove
 
----
+# Remove repository
+sudo rm /etc/apt/sources.list.d/vscode.list
 
-## ❌ What This Section Does *NOT* Do
+# Remove GPG key
+sudo rm /etc/apt/trusted.gpg.d/microsoft.gpg
 
-- No developer toolchains
-- No heavy creative software
-- No GNOME theming / ricing
+# Refresh APT
+sudo apt update
+```
 
-✅ This section focuses on **daily usability first**.
+**Optional user config cleanup**
+```bash
+rm -rf ~/.config/Code
+rm -rf ~/.vscode
+```
 
 ---
 
 ## ✅ Recommended Installation Order
 
-### 1) Install the core apps
+### 1️⃣ Core apps
 ```bash
-sudo apt install rhythmbox
-sudo apt install vlc
-sudo apt install gnome-shell-extension-manager
-sudo apt install libreoffice
+sudo apt install rhythmbox vlc libreoffice gnome-shell-extension-manager
 ```
 
-### 2) Then install GNOME extensions (via Extension Manager)
-- ✅ **X11 Gestures (Touchégg Integration)**
-- ✅ **Clipboard Indicator (by Tudmotu)**
+### 2️⃣ Browsers
+Pick one:
+- 🦊 **Firefox (APT)**  
+- 🦁 **Brave (official repo)**
 
-### 3) Install VS Code via Microsoft repo
-Use the commands in the **VS Code** section above.
+### 3️⃣ GNOME extensions (GUI)
+- **X11 Gestures (Touchégg Integration)**
+- **Clipboard Indicator (Tudmotu)**
+
+### 4️⃣ VS Code (Microsoft repo)
+
+---
+
+## 🧹 Full Cleanup Checklist (When needed)
+
+```bash
+sudo apt purge <package>
+sudo apt autoremove
+sudo apt clean
+
+sudo rm /etc/apt/sources.list.d/<repo>.list
+sudo rm /usr/share/keyrings/<key>.gpg
+sudo rm /etc/apt/trusted.gpg.d/<key>.gpg
+
+sudo apt update
+```
 
 ---
 
@@ -168,16 +302,21 @@ Use the commands in the **VS Code** section above.
 
 | Component | Purpose |
 |---|---|
-| **Rhythmbox** | Music playback |
-| **VLC** | Universal media player |
-| **Extension Manager** | GNOME extension control |
-| **Touchégg + X11 Gestures** | Laptop touchpad gestures |
-| **Clipboard Indicator (Tudmotu)** | Clipboard history |
-| **LibreOffice** | Office suite |
-| **VS Code** | Code editor |
+| Rhythmbox | Music playback |
+| VLC | Universal media player |
+| Firefox / Brave | Web browsing |
+| Extension Manager | GNOME extensions |
+| Touchégg + X11 Gestures | Laptop gestures |
+| Clipboard Indicator | Clipboard history |
+| LibreOffice | Office suite |
+| VS Code | Code editor |
 
 ---
-## 👉 Next: Cloudflare Warp
 
-- Move to **Cloudflare Warp**
-- **[13.cloudlfarewarp](../13.cloudlflarewarp/README.MD)**
+## 👉 Next: TLP
+
+- Move to **TLP cmds**
+- **[12.tlp](../13.tlp/README.MD)**
+
+
+
