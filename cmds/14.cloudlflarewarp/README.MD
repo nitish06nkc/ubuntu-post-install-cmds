@@ -2,8 +2,8 @@
 
 **Access restricted networks • Privacy • Safer Internet**
 
----
 
+> ⚠️ **Important:** This Installation only works in **LTS versions**.
 ## 📌 Why Cloudflare WARP Is Needed
 
 In many offices, colleges, hostels, and even home networks, administrators may:
